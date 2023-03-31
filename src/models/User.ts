@@ -1,7 +1,8 @@
 import mongoose from "mongoose";
 const Schema = mongoose.Schema;
+import {UserInterface} from "../interfaces/userInterface"
 
-const userSchema = new Schema({
+const userSchema = new Schema<UserInterface>({
   username: {
     type: String,
     required: true,
@@ -15,6 +16,9 @@ const userSchema = new Schema({
     required: true,
     minlenght: 5,
   },
+  token: {
+    type: String
+  }
 });
 
 
